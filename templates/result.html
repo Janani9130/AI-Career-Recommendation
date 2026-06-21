@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Recommendation Report</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:30px;
+        }
+
+        .container{
+            width:900px;
+            background:white;
+            border-radius:20px;
+            padding:40px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .title{
+            text-align:center;
+            color:#333;
+            margin-bottom:30px;
+        }
+
+        .career-box{
+            background:linear-gradient(135deg,#00c6ff,#0072ff);
+            color:white;
+            padding:20px;
+            border-radius:15px;
+            text-align:center;
+            margin-bottom:25px;
+        }
+
+        .career-box h2{
+            font-size:32px;
+        }
+
+        .section{
+            margin-top:20px;
+        }
+
+        .section h3{
+            color:#0072ff;
+            margin-bottom:10px;
+        }
+
+        .card{
+            background:#f8f9ff;
+            padding:15px;
+            border-radius:12px;
+            border-left:5px solid #0072ff;
+        }
+
+        .salary{
+            font-size:24px;
+            color:green;
+            font-weight:bold;
+        }
+
+        ul{
+            list-style:none;
+            padding:0;
+        }
+
+        li{
+            background:#eef3ff;
+            padding:10px;
+            margin:8px 0;
+            border-radius:8px;
+        }
+
+        .back-btn{
+            display:block;
+            width:220px;
+            margin:30px auto 0;
+            text-align:center;
+            text-decoration:none;
+            background:#0072ff;
+            color:white;
+            padding:12px;
+            border-radius:10px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .back-btn:hover{
+            background:#0056cc;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="title">🎯 Career Recommendation Report</h1>
+
+    <div class="career-box">
+        <h2>{{ career }}</h2>
+    </div>
+
+    <div class="section">
+        <h3>📖 Career Description</h3>
+        <div class="card">
+            {{ description }}
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>💰 Average Salary (India)</h3>
+        <div class="card salary">
+            {{ salary }}
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🛠 Required Skills</h3>
+
+        <ul>
+            {% for skill in skills %}
+            <li>✅ {{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>📈 Improvement Suggestions</h3>
+
+        <ul>
+            {% for item in suggestions %}
+            <li>🚀 {{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a href="/" class="back-btn">⬅ Back to Home</a>
+
+</div>
+
+</body>
+</html>
